@@ -9,6 +9,7 @@ AnimatorController:
   m_Name: basic_player_move_0
   serializedVersion: 5
   m_AnimatorParameters: []
+<<<<<<< HEAD
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -70,3 +71,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102619503957788410}
+=======
+  m_AnimatorLayers: []
+>>>>>>> 3668a853db21552e953d6885b5587eaa15196533
