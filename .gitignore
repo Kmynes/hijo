@@ -58,5 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-# Ase sprite editing files
+# Ase sprite edit files and meta files
 *.ase
+*.ase.meta
