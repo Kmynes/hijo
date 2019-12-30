@@ -8,12 +8,14 @@ public class EnemyScript : MonoBehaviour
     Rigidbody2D rb2d;
     SpriteRenderer spriteRenderer;
     bool isFacingRight = true;
-    public Transform startSight, endSight;
+    public Transform startSight;
+    //float speedMovement = 2.5f;
     public bool seesPlayer = false;
     public float stepsBeforeTurn;
     float stepsRemaining;
     public float waitTime;
     float waitTimeRemaining;
+    public float range = 4;
 
     void Start()
     {
@@ -32,13 +34,9 @@ public class EnemyScript : MonoBehaviour
 
     void Raycasting()
     {
-        Debug.DrawLine(startSight.position, endSight.position, Color.green);
-        seesPlayer = Physics2D.Linecast(startSight.position, endSight.position, 1 << LayerMask.NameToLayer("Player"));
-        if (seesPlayer == true)
-        {
-            Debug.DrawLine(startSight.position, endSight.position, Color.magenta);
-            seesPlayer = Physics2D.Linecast(startSight.position, endSight.position, 1 << LayerMask.NameToLayer("Player"));
-        }
+        Vector3 endSight = startSight.position + new Vector3(((isFacingRight) ? range : range * -1), 0, 0);
+        seesPlayer = Physics2D.Linecast(startSight.position, endSight, 1 << LayerMask.NameToLayer("Player"));
+        Debug.DrawLine(startSight.position, endSight, (seesPlayer) ? Color.magenta : Color.green);
     }
 
     void Behaviour()
@@ -47,6 +45,11 @@ public class EnemyScript : MonoBehaviour
         {
             rb2d.velocity = new Vector2(0, 0);
             animator.Play("guard aim");
+            if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+            {
+                FindObjectOfType<AudioManager>().PlaySound("gunshot");
+                FindObjectOfType<PlayerControler>().state = PlayerControler.States.Dead;
+            }
         }
         else
         {
@@ -75,13 +78,11 @@ public class EnemyScript : MonoBehaviour
                     {
                         spriteRenderer.flipX = true;
                         isFacingRight = false;
-                        endSight.position += new Vector3(-8, 0, 0);
                     }
                     else
                     {
                         spriteRenderer.flipX = false;
                         isFacingRight = true;
-                        endSight.position += new Vector3(8, 0, 0);
                     }
                 }
                 else
