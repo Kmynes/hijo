@@ -8,11 +8,12 @@ public class ChangeSprite : MonoBehaviour
     public Sprite outofrange;
     SpriteRenderer spriteRenderer;
     public Transform rangeBack, rangeFront;
-    public string nameofabject;
+    string nameofabject;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        nameofabject = this.gameObject.name;
     }
 
     private void FixedUpdate()

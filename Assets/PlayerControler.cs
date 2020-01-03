@@ -112,7 +112,14 @@ public class PlayerControler : MonoBehaviour
                 }
                 break;
             case "ladder": //si tu touche un "ladder"
-                
+                if (this.transform.position.y < ColliderHit.transform.position.y / 2)
+                {
+                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y + 3.5f, this.transform.position.z);
+                }
+                else
+                {
+                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y - 3.5f, this.transform.position.z);
+                }
                 break;
         }
     }
