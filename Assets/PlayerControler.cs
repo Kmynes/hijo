@@ -111,6 +111,9 @@ public class PlayerControler : MonoBehaviour
                     this.gameObject.layer = LayerMask.NameToLayer("Player");
                 }
                 break;
+            case "ladder": //si tu touche un "ladder"
+                
+                break;
         }
     }
 }
