@@ -88,7 +88,7 @@ public class PlayerControler : MonoBehaviour
 
     private RaycastHit2D CanInteractWithSomething()
     {
-        return Physics2D.Linecast(rangeBack.position, rangeFront.position, 1 << LayerMask.NameToLayer("Interractibles"));
+        return Physics2D.Linecast(rangeBack.position, rangeFront.position, 1 << LayerMask.NameToLayer("Interactibles"));
     }
 
     private void interactWithSomething(Collider2D ColliderHit)

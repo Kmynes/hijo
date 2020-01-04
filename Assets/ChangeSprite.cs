@@ -8,20 +8,20 @@ public class ChangeSprite : MonoBehaviour
     public Sprite outofrange;
     SpriteRenderer spriteRenderer;
     public Transform rangeBack, rangeFront;
-    string nameofabject;
+    string nameofobject;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        nameofabject = this.gameObject.name;
+        nameofobject = this.gameObject.name;
     }
 
     private void FixedUpdate()
     {
 
-        if (Physics2D.Linecast(rangeBack.position, rangeFront.position, 1 << LayerMask.NameToLayer("Interractibles")))
+        if (Physics2D.Linecast(rangeBack.position, rangeFront.position, 1 << LayerMask.NameToLayer("Interactibles")))
         {
-            if(Physics2D.Linecast(rangeBack.position, rangeFront.position, 1 << LayerMask.NameToLayer("Interractibles")).collider.name == nameofabject)
+            if(Physics2D.Linecast(rangeBack.position, rangeFront.position, 1 << LayerMask.NameToLayer("Interactibles")).collider.name == nameofobject)
             {
                 spriteRenderer.sprite = inrange;
             }
