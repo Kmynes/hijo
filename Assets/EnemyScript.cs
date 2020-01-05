@@ -46,7 +46,6 @@ public class EnemyScript : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().PlaySound("gunshot");
                 FindObjectOfType<PlayerControler>().state = PlayerControler.States.Dead;
-                FindObjectOfType<ImageManager>().PrintOrPutAwayChild("GameOver");
             }
         }
         else
