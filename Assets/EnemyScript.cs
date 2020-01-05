@@ -42,11 +42,6 @@ public class EnemyScript : MonoBehaviour
         {
             rb2d.velocity = new Vector2(0, 0);
             animator.Play("guard aim");
-            if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
-            {
-                FindObjectOfType<AudioManager>().PlaySound("gunshot");
-                FindObjectOfType<PlayerControler>().state = PlayerControler.States.Dead;
-            }
         }
         else
         {
@@ -103,5 +98,11 @@ public class EnemyScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Killplayer()
+    {
+        FindObjectOfType<AudioManager>().PlaySound("gunshot");
+        FindObjectOfType<PlayerControler>().state = PlayerControler.States.Dead;
     }
 }

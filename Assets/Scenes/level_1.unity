@@ -2387,7 +2387,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964197557}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fced4f12a46968645b4a567167ae7b6f, type: 2}
   m_CullingMode: 0
@@ -2481,6 +2481,7 @@ MonoBehaviour:
   seesPlayer: 1
   waitTime: 2
   range: 4
+  AnimationBS: 0
 --- !u!1 &977702617
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,6 +3412,7 @@ MonoBehaviour:
   seesPlayer: 1
   waitTime: 2
   range: 4
+  AnimationBS: 0
 --- !u!61 &1447473582
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3466,7 +3468,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447473579}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fced4f12a46968645b4a567167ae7b6f, type: 2}
   m_CullingMode: 0
