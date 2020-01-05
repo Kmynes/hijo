@@ -115,11 +115,11 @@ public class PlayerControler : MonoBehaviour
 				float ladderhight = System.Math.Abs(ColliderHit.transform.position.y * 10);
                 if (this.transform.position.y < ColliderHit.transform.position.y / 2)
                 {
-                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y + ladderhight, this.transform.position.z);
+                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y + 7f, this.transform.position.z);
                 }
                 else
                 {
-                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y - ladderhight, this.transform.position.z);
+                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y - 7f, this.transform.position.z);
                 }
                 break;
         }
