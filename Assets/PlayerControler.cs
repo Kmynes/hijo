@@ -40,6 +40,7 @@ public class PlayerControler : MonoBehaviour
     {
         if(this.state == States.Dead)
         {
+            animator.Play("player idle");
             FindObjectOfType<ImageManager>().PrintImg("GameOver");
         }
 
