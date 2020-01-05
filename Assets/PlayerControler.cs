@@ -18,7 +18,7 @@ public class PlayerControler : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public States state; //etat du mec simplement avec une enum simple a piger (et pas besoin de check les layers a chaque fois)
     RaycastHit2D lastInteractHit2D;
-    float speedMovement = 4; //vitesse du mec, peut etre edit si tu veux le faire courir, ralentir, ou simplement modifier pour coder
+    float speedMovement = 9; //vitesse du mec, peut etre edit si tu veux le faire courir, ralentir, ou simplement modifier pour coder
     bool lastPressedStateKeyE = false; //var utilisé pour savoir si entre 2 frames ont a relaché le bouton E, pour eviter le bug que tu as eu au tout début : 
                                        //le bug etait que frame x = tu appuyais sur E, ca allait dans la condition ou tu allais dans le casier
                                        //frame x + 1 = tu etais encore appuyé sur E (physiquement tu peux pas appuyer sur un bouton pendant 1 seule frame ahah) 
@@ -112,13 +112,14 @@ public class PlayerControler : MonoBehaviour
                 }
                 break;
             case "ladder": //si tu touche un "ladder"
+				float ladderhight = System.Math.Abs(ColliderHit.transform.position.y * 10);
                 if (this.transform.position.y < ColliderHit.transform.position.y / 2)
                 {
-                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y + 3.5f, this.transform.position.z);
+                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y + ladderhight, this.transform.position.z);
                 }
                 else
                 {
-                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y - 3.5f, this.transform.position.z);
+                    this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y - ladderhight, this.transform.position.z);
                 }
                 break;
         }
