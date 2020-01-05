@@ -50,7 +50,11 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
-            if(this.transform.position.x > leftpatrol.position.x && this.transform.position.x < rightpatrol.position.x)
+            if(FindObjectOfType<PlayerControler>().state == PlayerControler.States.BlockedByGame)
+            {
+                rb2d.velocity = new Vector2(0, 0);
+            }
+            else if(this.transform.position.x > leftpatrol.position.x && this.transform.position.x < rightpatrol.position.x)
             {
                 animator.Play("guard walk");
                 if (isFacingRight == true)

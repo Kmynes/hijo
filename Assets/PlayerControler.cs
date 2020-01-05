@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -128,7 +129,17 @@ public class PlayerControler : MonoBehaviour
                 }
                 break;
             case "desktop":
-                   
+                if(this.state != States.BlockedByGame)
+                {
+                    this.state = States.BlockedByGame;
+                    FindObjectOfType<Image>().enabled = true;
+                }
+                else
+                {
+                    this.state = States.Default;
+                    FindObjectOfType<Image>().enabled = false;
+                }
+                
                 break;
         }
     }
