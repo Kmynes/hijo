@@ -127,6 +127,9 @@ public class PlayerControler : MonoBehaviour
                     this.transform.position = new Vector3(ColliderHit.bounds.min.x, ColliderHit.bounds.min.y + 1.5f, ColliderHit.bounds.min.z);
                 }
                 break;
+            case "desktop":
+                   
+                break;
         }
     }
 }
