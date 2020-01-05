@@ -69,6 +69,12 @@ public class PlayerControler : MonoBehaviour
         {
             lastPressedStateKeyE = false;
         }
+
+        //RESTART
+        if (Input.GetKey("r") && state == States.Dead)
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 
     private void MoveRigidBody(Vector2 direction)
