@@ -9,7 +9,6 @@ public class EnemyScript : MonoBehaviour
     SpriteRenderer spriteRenderer;
     bool isFacingRight = true;
     public Transform startSight, leftpatrol, rightpatrol;
-    public float xofleft, xofright, xofobj;
     public float speedMovement = 2.5f;
     public bool seesPlayer = false;
     public float waitTime;
@@ -22,13 +21,10 @@ public class EnemyScript : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         waitTimeRemaining = waitTime;
-        xofleft = leftpatrol.position.x;
-        xofright = rightpatrol.position.x;
     }
 
     private void FixedUpdate()
     {
-        xofobj = this.transform.position.x;
         Raycasting();
         Behaviour();
     }
