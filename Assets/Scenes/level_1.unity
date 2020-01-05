@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 290463461}
   m_Layer: 8
   m_Name: Objective
-  m_TagString: Untagged
+  m_TagString: desktop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1700,7 +1700,7 @@ GameObject:
   - component: {fileID: 713650092}
   - component: {fileID: 713650093}
   m_Layer: 0
-  m_Name: archive_shelf
+  m_Name: archive_shelf_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3807,7 +3807,7 @@ GameObject:
   - component: {fileID: 1692246808}
   - component: {fileID: 1692246809}
   m_Layer: 0
-  m_Name: archive_shelf_2
+  m_Name: archive_shelf_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
