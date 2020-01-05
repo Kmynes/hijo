@@ -8,11 +8,10 @@ public class EnemyScript : MonoBehaviour
     Rigidbody2D rb2d;
     SpriteRenderer spriteRenderer;
     bool isFacingRight = true;
-    public Transform startSight;
-    //float speedMovement = 2.5f;
+    public Transform startSight, leftpatrol, rightpatrol;
+    public float xofleft, xofright, xofobj;
+    public float speedMovement = 2.5f;
     public bool seesPlayer = false;
-    public float stepsBeforeTurn;
-    float stepsRemaining;
     public float waitTime;
     float waitTimeRemaining;
     public float range = 4;
@@ -22,12 +21,14 @@ public class EnemyScript : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        stepsRemaining = stepsBeforeTurn;
         waitTimeRemaining = waitTime;
+        xofleft = leftpatrol.position.x;
+        xofright = rightpatrol.position.x;
     }
 
     private void FixedUpdate()
     {
+        xofobj = this.transform.position.x;
         Raycasting();
         Behaviour();
     }
@@ -53,34 +54,45 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
-            if(stepsRemaining > 0)
+            if(this.transform.position.x > leftpatrol.position.x && this.transform.position.x < rightpatrol.position.x)
             {
                 animator.Play("guard walk");
                 if (isFacingRight == true)
                 {
-                    rb2d.velocity = new Vector2(2, 0);
+                    rb2d.velocity = new Vector2(speedMovement, 0);
                 }
                 else
                 {
-                    rb2d.velocity = new Vector2(-2, 0);
+                    rb2d.velocity = new Vector2(-speedMovement, 0);
                 }
-                stepsRemaining--;
             }
             else
             {
                 rb2d.velocity = new Vector2(0, 0);
-                animator.Play("guard idle");
-                if(waitTimeRemaining <= 0)
+
+                if (this.transform.position.x < leftpatrol.position.x)
                 {
-                    stepsRemaining = stepsBeforeTurn;
+                    this.transform.position = new Vector3(leftpatrol.position.x, this.transform.position.y, this.transform.position.z);
+                    animator.Play("guard idle");
+                }
+                else if (this.transform.position.x > rightpatrol.position.x)
+                {
+                    this.transform.position = new Vector3(rightpatrol.position.x, this.transform.position.y, this.transform.position.z);
+                    animator.Play("guard idle");
+                }
+
+                if (waitTimeRemaining <= 0)
+                {
                     waitTimeRemaining = waitTime;
                     if(isFacingRight == true)
                     {
                         spriteRenderer.flipX = true;
+                        this.transform.position = new Vector3(rightpatrol.position.x - 0.000001f, this.transform.position.y, this.transform.position.z);
                         isFacingRight = false;
                     }
                     else
                     {
+                        this.transform.position = new Vector3(leftpatrol.position.x + 0.000001f, this.transform.position.y, this.transform.position.z);
                         spriteRenderer.flipX = false;
                         isFacingRight = true;
                     }
