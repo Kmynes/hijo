@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hiding
   - ladder
+  - desktop
   layers:
   - Default
   - TransparentFX
