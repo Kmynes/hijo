@@ -46,11 +46,12 @@ public class EnemyScript : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().PlaySound("gunshot");
                 FindObjectOfType<PlayerControler>().state = PlayerControler.States.Dead;
+                FindObjectOfType<ImageManager>().PrintOrPutAwayChild("GameOver");
             }
         }
         else
         {
-            if(FindObjectOfType<PlayerControler>().state == PlayerControler.States.BlockedByGame)
+            if(FindObjectOfType<PlayerControler>().state == PlayerControler.States.BlockedByGame || FindObjectOfType<PlayerControler>().state == PlayerControler.States.Dead)
             {
                 rb2d.velocity = new Vector2(0, 0);
             }
