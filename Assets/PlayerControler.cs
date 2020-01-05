@@ -38,6 +38,11 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(this.state == States.Dead)
+        {
+            FindObjectOfType<ImageManager>().PrintImg("GameOver");
+        }
+
         //DEPLACEMENTS
         if (Input.GetKey("left") && state == States.Default) //si le mec est dans son etat normal et que la touche est appuyée
         {
@@ -129,17 +134,15 @@ public class PlayerControler : MonoBehaviour
                 }
                 break;
             case "desktop":
-                if(this.state != States.BlockedByGame)
+                FindObjectOfType<ImageManager>().PrintOrPutAwayChild(ColliderHit.name);
+                if (this.state != States.BlockedByGame)
                 {
                     this.state = States.BlockedByGame;
-                    FindObjectOfType<Image>().enabled = true;
                 }
                 else
                 {
                     this.state = States.Default;
-                    FindObjectOfType<Image>().enabled = false;
                 }
-                
                 break;
         }
     }

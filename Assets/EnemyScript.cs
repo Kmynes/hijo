@@ -50,7 +50,7 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
-            if(FindObjectOfType<PlayerControler>().state == PlayerControler.States.BlockedByGame)
+            if(FindObjectOfType<PlayerControler>().state == PlayerControler.States.BlockedByGame || FindObjectOfType<PlayerControler>().state == PlayerControler.States.Dead)
             {
                 rb2d.velocity = new Vector2(0, 0);
             }

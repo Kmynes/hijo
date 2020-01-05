@@ -1493,7 +1493,11 @@ Transform:
   m_Father: {fileID: 1420907894}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Scenes/level1_kevin.unity
+--- !u!1 &646375649
+=======
 --- !u!1 &713650091
+>>>>>>> 0dc49339f2e73c3dde213070fc0857f1042478db:Assets/Scenes/level_1.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1501,21 +1505,67 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Scenes/level1_kevin.unity
+  - component: {fileID: 646375652}
+  - component: {fileID: 646375651}
+  - component: {fileID: 646375650}
+  m_Layer: 5
+  m_Name: GameOver
+=======
   - component: {fileID: 713650092}
   - component: {fileID: 713650093}
   m_Layer: 0
   m_Name: archive_shelf
+>>>>>>> 0dc49339f2e73c3dde213070fc0857f1042478db:Assets/Scenes/level_1.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Assets/Scenes/level1_kevin.unity
+--- !u!114 &646375650
+MonoBehaviour:
+=======
 --- !u!4 &713650092
 Transform:
+>>>>>>> 0dc49339f2e73c3dde213070fc0857f1042478db:Assets/Scenes/level_1.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/level1_kevin.unity
+  m_GameObject: {fileID: 646375649}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e1c71eee0a26b454fa78610bd1d7d66a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &646375651
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646375649}
+  m_CullTransparentMesh: 0
+--- !u!224 &646375652
+RectTransform:
+=======
   m_GameObject: {fileID: 713650091}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.79497, y: 0.01569, z: 0}
@@ -1526,10 +1576,26 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &713650093
 SpriteRenderer:
+>>>>>>> 0dc49339f2e73c3dde213070fc0857f1042478db:Assets/Scenes/level_1.unity
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/level1_kevin.unity
+  m_GameObject: {fileID: 646375649}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1992254414}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+=======
   m_GameObject: {fileID: 713650091}
   m_Enabled: 1
   m_CastShadows: 0
@@ -1572,6 +1638,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+>>>>>>> 0dc49339f2e73c3dde213070fc0857f1042478db:Assets/Scenes/level_1.unity
 --- !u!1 &745063271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,7 +3759,7 @@ GameObject:
   - component: {fileID: 1695089066}
   - component: {fileID: 1695089065}
   m_Layer: 8
-  m_Name: poster
+  m_Name: Document1
   m_TagString: desktop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4112,8 +4179,9 @@ GameObject:
   - component: {fileID: 1992254413}
   - component: {fileID: 1992254412}
   - component: {fileID: 1992254411}
+  - component: {fileID: 1992254415}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UIContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4191,6 +4259,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2026114255}
+  - {fileID: 646375652}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4199,6 +4268,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1992254415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992254410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16268d7d62e3c7c458eaa01dc4874c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagelist:
+  - {fileID: 2026114257}
+  - {fileID: 646375650}
 --- !u!1 &2026114254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,7 +4295,7 @@ GameObject:
   - component: {fileID: 2026114258}
   - component: {fileID: 2026114257}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Document1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
