@@ -5,13 +5,19 @@ using UnityEngine;
 public class OnCollision : MonoBehaviour
 {
     public bool playerinrange = false;
+    SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
         if (collider2D.CompareTag("Player") && FindObjectOfType<PlayerControler>().objectivDone == false)
         {
             playerinrange = true;
-            FindObjectOfType<ImageManager>().PrintOrPutAwayChild(this.name);
+            this.spriteRenderer.enabled = true;
         }
     }
 
@@ -20,7 +26,7 @@ public class OnCollision : MonoBehaviour
         if (collider2D.CompareTag("Player") && FindObjectOfType<PlayerControler>().objectivDone == false)
         {
             playerinrange = false;
-            FindObjectOfType<ImageManager>().PrintOrPutAwayChild(this.name);
+            this.spriteRenderer.enabled = false;
         }
     }
 }
