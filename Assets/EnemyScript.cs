@@ -8,6 +8,7 @@ public class EnemyScript : MonoBehaviour
     Rigidbody2D rb2d;
     SpriteRenderer spriteRenderer;
     bool isFacingRight = true;
+    public bool fliplight = false;
     public Transform startSight, leftpatrol, rightpatrol;
     public float speedMovement = 2.5f;
     public bool seesPlayer = false;
@@ -82,12 +83,14 @@ public class EnemyScript : MonoBehaviour
                     if(isFacingRight == true)
                     {
                         spriteRenderer.flipX = true;
+                        fliplight = true;
                         this.transform.position = new Vector3(rightpatrol.position.x - 0.000001f, this.transform.position.y, this.transform.position.z);
                         isFacingRight = false;
                     }
                     else
                     {
                         spriteRenderer.flipX = false;
+                        fliplight = true;
                         this.transform.position = new Vector3(leftpatrol.position.x + 0.000001f, this.transform.position.y, this.transform.position.z);
                         isFacingRight = true;
                     }
