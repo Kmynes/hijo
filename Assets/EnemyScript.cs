@@ -87,8 +87,8 @@ public class EnemyScript : MonoBehaviour
                     }
                     else
                     {
-                        this.transform.position = new Vector3(leftpatrol.position.x + 0.000001f, this.transform.position.y, this.transform.position.z);
                         spriteRenderer.flipX = false;
+                        this.transform.position = new Vector3(leftpatrol.position.x + 0.000001f, this.transform.position.y, this.transform.position.z);
                         isFacingRight = true;
                     }
                 }
