@@ -25,7 +25,7 @@ public class PlayerControler : MonoBehaviour
                                        //frame x + 1 = tu etais encore appuyé sur E (physiquement tu peux pas appuyer sur un bouton pendant 1 seule frame ahah) 
                                        //et ducoup frame x + 1 tu rerentrais dans la condition ou tu etais appuyé sur E  et ca te ressortais du casier
                                        //frame x + 2 ...etc jusqu'a ce que ton corps lache la touche. (si tu veux vérif, rajoute dans ton code d'avant un console.log)
-
+    public bool objectivDone = false;
     public Transform rangeBack, rangeFront;
 
     void Start()
@@ -34,6 +34,7 @@ public class PlayerControler : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         state = States.Default;
+        Physics2D.IgnoreLayerCollision(9, 11, true);
     }
 
     private void FixedUpdate()
@@ -135,6 +136,10 @@ public class PlayerControler : MonoBehaviour
                 }
                 break;
             case "desktop":
+                if(ColliderHit.name == "Objective")
+                {
+                    this.objectivDone = true;
+                }
                 FindObjectOfType<ImageManager>().PrintOrPutAwayChild(ColliderHit.name);
                 if (this.state != States.BlockedByGame)
                 {
@@ -143,6 +148,15 @@ public class PlayerControler : MonoBehaviour
                 else
                 {
                     this.state = States.Default;
+                }
+                break;
+            case "end of level":
+                if (this.objectivDone == true)
+                {
+                    MoveRigidBody(Vector2.zero);
+                    animator.Play("player idle");
+                    FindObjectOfType<ImageManager>().PrintImg("GameOver");
+                    this.state = States.BlockedByGame;
                 }
                 break;
         }
