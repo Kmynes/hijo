@@ -126,7 +126,7 @@ public class PlayerControler : MonoBehaviour
                 }
                 break;
             case "ladder": //si tu touche un "ladder"
-                FindObjectOfType<AudioManager>().PlaySound("climb ladder");
+                FindObjectOfType<AudioManager>().PlaySoundInterval("climb ladder", 2.0f, 2.717f);//PlaySound("climb ladder");
                 if (this.transform.position.y < ColliderHit.bounds.center.y)
                 {
                     this.transform.position = new Vector3(ColliderHit.bounds.max.x, ColliderHit.bounds.max.y + 1.5f, ColliderHit.bounds.max.z);

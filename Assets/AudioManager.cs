@@ -20,4 +20,11 @@ public class AudioManager : MonoBehaviour
     {
         Array.Find(sounds, sound => sound.name == soundname).source.Play();
     }
+
+    public void PlaySoundInterval(string soundname, float fromSeconds, float toSeconds)
+    {
+        Array.Find(sounds, sound => sound.name == soundname).source.time = fromSeconds;
+        Array.Find(sounds, sound => sound.name == soundname).source.Play();
+        Array.Find(sounds, sound => sound.name == soundname).source.SetScheduledEndTime(AudioSettings.dspTime + (toSeconds - fromSeconds));
+    }
 }
