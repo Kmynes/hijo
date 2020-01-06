@@ -3005,6 +3005,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 75bb9bbf6beecfb448dd4eb77849120e, type: 3}
     volume: 1
     source: {fileID: 0}
+  - name: climb ladder
+    clip: {fileID: 8300000, guid: d420b56aa682f02429e2f494b20ff9d4, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: papper shuffle
+    clip: {fileID: 8300000, guid: bb7fa49f2a3c4044f99e0b210d4de3f3, type: 3}
+    volume: 1
+    source: {fileID: 0}
 --- !u!4 &1118545608
 Transform:
   m_ObjectHideFlags: 0
@@ -4777,7 +4785,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   objectivDone: 0
-  testeol: 0
   rangeBack: {fileID: 1987965755}
   rangeFront: {fileID: 446527706}
 --- !u!1 &2110990265

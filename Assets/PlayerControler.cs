@@ -126,6 +126,7 @@ public class PlayerControler : MonoBehaviour
                 }
                 break;
             case "ladder": //si tu touche un "ladder"
+                FindObjectOfType<AudioManager>().PlaySound("climb ladder");
                 if (this.transform.position.y < ColliderHit.bounds.center.y)
                 {
                     this.transform.position = new Vector3(ColliderHit.bounds.max.x, ColliderHit.bounds.max.y + 1.5f, ColliderHit.bounds.max.z);
@@ -135,14 +136,15 @@ public class PlayerControler : MonoBehaviour
                     this.transform.position = new Vector3(ColliderHit.bounds.min.x, ColliderHit.bounds.min.y + 1.5f, ColliderHit.bounds.min.z);
                 }
                 break;
-            case "desktop":
-                if(ColliderHit.name == "Objective")
+            case "desktop": //si tu touche un "des bureaux avec documents a lire"
+                if (ColliderHit.name == "Objective")
                 {
                     this.objectivDone = true;
                 }
                 FindObjectOfType<ImageManager>().PrintOrPutAwayChild(ColliderHit.name);
                 if (this.state != States.BlockedByGame)
                 {
+                    FindObjectOfType<AudioManager>().PlaySound("papper shuffle");
                     this.state = States.BlockedByGame;
                 }
                 else
@@ -150,7 +152,7 @@ public class PlayerControler : MonoBehaviour
                     this.state = States.Default;
                 }
                 break;
-            case "end of level":
+            case "end of level": //si tu touche un "fin de niveau"
                 if (this.objectivDone == true)
                 {
                     MoveRigidBody(Vector2.zero);
