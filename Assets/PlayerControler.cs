@@ -79,7 +79,7 @@ public class PlayerControler : MonoBehaviour
         }
 
         //RESTART
-        if (Input.GetKey("r") && state == States.Dead)
+        if (Input.GetKey("r") && (state == States.Dead || (state == States.BlockedByGame && objectivDone == true && FindObjectOfType<ImageManager>().IsImageOnScreen("EndOfLevel") == true)))
         {
             Application.LoadLevel(Application.loadedLevel);
         }
@@ -157,7 +157,7 @@ public class PlayerControler : MonoBehaviour
                 {
                     MoveRigidBody(Vector2.zero);
                     animator.Play("player idle");
-                    FindObjectOfType<ImageManager>().PrintImg("GameOver");
+                    FindObjectOfType<ImageManager>().PrintImg("EndOfLevel");
                     this.state = States.BlockedByGame;
                 }
                 break;

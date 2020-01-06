@@ -18,12 +18,17 @@ public class ImageManager : MonoBehaviour
         {
             pic.enabled = true;
         }
-
     }
 
     public void PrintImg(string imagename)
     {
         Image pic = Array.Find(imagelist, imagelist => imagelist.name == imagename);
         pic.enabled = true;
+    }
+
+    public bool IsImageOnScreen(string imagename)
+    {
+        Image pic = Array.Find(imagelist, imagelist => imagelist.name == imagename);
+        return pic.enabled;
     }
 }
