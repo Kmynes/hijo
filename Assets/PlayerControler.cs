@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerControler : MonoBehaviour
 {
-
     public enum States
     {
         Default = 0, //etat normal du jeu (peut se deplacer, faire des actions)
@@ -115,6 +114,7 @@ public class PlayerControler : MonoBehaviour
                 {
                     state = States.Hide;
                     spriteRenderer.sortingOrder = 0;
+                    spriteRenderer.sortingLayerName = "Default";
                     this.gameObject.layer = LayerMask.NameToLayer("Hiding");
                     this.transform.position = new Vector3(ColliderHit.transform.position.x, this.transform.position.y, this.transform.position.z);
                 }
@@ -122,6 +122,7 @@ public class PlayerControler : MonoBehaviour
                 {
                     state = States.Default;
                     spriteRenderer.sortingOrder = 3;
+                    spriteRenderer.sortingLayerName = "Player";
                     this.gameObject.layer = LayerMask.NameToLayer("Player");
                 }
                 break;
